@@ -1,0 +1,147 @@
+@import "../../app.scss";
+
+.techstacks {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .textContainer {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include mobile {
+      text-align: center;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 20px;
+      color: gray;
+      text-align: right;
+    }
+
+    hr {
+      width: 300px;
+      border: none;
+      border-top: 0.5px solid gray;
+    }
+  }
+
+  .titleContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      margin-top: -120px;
+    }
+
+    .title {
+      align-items: center;
+      font-size: 70px;
+
+      @include mobile {
+        text-align: center;
+        font-size: 40px;
+      }
+
+      .animate-charcter {
+        text-transform: uppercase;
+        background-image: linear-gradient(
+          to right,
+          red 0%,
+          orange 20%,
+          yellow 40%,
+          green 60%,
+          blue 80%,
+          violet 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        // text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+      }
+
+      @keyframes textclip {
+        to {
+          background-position: 200% center;
+        }
+      }
+    }
+  }
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1366px;
+    margin: auto;
+    margin-bottom: 60px;
+    align-items: center;
+    gap: 20px;
+
+    .box {
+      padding: 20px;
+      display: flex;
+      border-style: none;
+      outline: none;
+      border: 0.25em solid transparent;
+      background-image: linear-gradient(#0c0c1d, #0c0c1d),
+        linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border-radius: 1em;
+      background-size: 200% 100%;
+      transition: background-position 0.8s ease-out;
+      gap: 30px;
+
+      @include mobile {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px;
+      }
+
+      &:hover {
+        background-position: 100% 0;
+      }
+
+      legend {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 0 10px;
+        background: #0c0c1d;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+
+      @include mobile {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+      }
+    }
+  }
+}
